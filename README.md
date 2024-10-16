@@ -42,5 +42,14 @@ you may also check that the tables have been created under CivicTransportCard da
 
 
 Thing/s to check:
-Check the appsettings.json file in \MoneyMe_Challenge\MoneyMe_Challenge.API folder, the moneyMeUIURL value should be the same URL if you run (npm run dev) of the UI application, if not, update the appsettings.json to match it
-![image](https://github.com/user-attachments/assets/06cdfbff-227b-499f-b156-b3fe1e62f468)
+Bewfore you run the application,
+The API Project and Windows Forms project should run simultaneously as the Winforms project is calling the endpoint in the WebAPi Project
+To set it to run simultaneously, please see screenshots below
+![image](https://github.com/user-attachments/assets/ebc8c87d-08f3-40d0-b8ed-057aad7b546a)
+
+![image](https://github.com/user-attachments/assets/e77fcb26-8d6c-4882-8007-fcee815832fe)
+
+
+Check the App.config file in CivicTransportCard.WinForms Project, the baseAPIURL value should be the same URL if you run the WebAPI Project
+![image](https://github.com/user-attachments/assets/fce7056c-b067-4b21-91c5-2c4be02d99b5)
+
