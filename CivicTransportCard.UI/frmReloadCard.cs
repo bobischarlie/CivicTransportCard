@@ -42,7 +42,7 @@ namespace CivicTransportCard.WinForms
                     }
                 }
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

@@ -43,7 +43,7 @@ namespace CivicTransportCard.UI
                     }
                 }
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -98,7 +98,7 @@ namespace CivicTransportCard.UI
             TextBox textBox = sender as TextBox;
             int length = textBox.Text.Length;
 
-            if (length != 10 && length != 12)
+            if (length != 10 && length != 12 && cboCardType.SelectedIndex == (int)CardType.Civic_Discounted_Transport)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(textBox, "This must be exactly 10 or 12 characters long.");

@@ -33,9 +33,9 @@
             label2 = new Label();
             txtCardNo = new TextBox();
             groupBox1 = new GroupBox();
+            picLoading = new PictureBox();
             btnSubmit = new Button();
             btnCancel = new Button();
-            picLoading = new PictureBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLoading).BeginInit();
             SuspendLayout();
@@ -92,6 +92,17 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Transaction";
             // 
+            // picLoading
+            // 
+            picLoading.Image = Properties.Resources.Spinner_3;
+            picLoading.Location = new Point(303, 103);
+            picLoading.Name = "picLoading";
+            picLoading.Size = new Size(64, 64);
+            picLoading.SizeMode = PictureBoxSizeMode.AutoSize;
+            picLoading.TabIndex = 4;
+            picLoading.TabStop = false;
+            picLoading.Visible = false;
+            // 
             // btnSubmit
             // 
             btnSubmit.Location = new Point(508, 246);
@@ -111,17 +122,6 @@
             btnCancel.Text = "CANCEL";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
-            // 
-            // picLoading
-            // 
-            picLoading.Image = Properties.Resources.Spinner_3;
-            picLoading.Location = new Point(303, 103);
-            picLoading.Name = "picLoading";
-            picLoading.Size = new Size(64, 64);
-            picLoading.SizeMode = PictureBoxSizeMode.AutoSize;
-            picLoading.TabIndex = 4;
-            picLoading.TabStop = false;
-            picLoading.Visible = false;
             // 
             // frmTransaction
             // 
