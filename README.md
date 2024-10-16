@@ -47,7 +47,8 @@ The API Project and Windows Forms project should run simultaneously as the Winfo
 To set it to run simultaneously, please see screenshots below
 ![image](https://github.com/user-attachments/assets/ebc8c87d-08f3-40d0-b8ed-057aad7b546a)
 
-![image](https://github.com/user-attachments/assets/e77fcb26-8d6c-4882-8007-fcee815832fe)
+![image](https://github.com/user-attachments/assets/fccb1438-6e8e-4d1c-864d-f97a2f60d29a)
+
 
 
 Check the App.config file in CivicTransportCard.WinForms Project, the baseAPIURL value should be the same URL if you run the WebAPI Project
