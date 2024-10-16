@@ -33,7 +33,8 @@ Database:
 
 
 -Then click Publish button
-![image](https://github.com/user-attachments/assets/0991aec9-ebc7-432e-9d14-0624dd54c10f)
+![image](https://github.com/user-attachments/assets/3b68971c-d1b1-4b17-890d-5caa0b8367e6)
+
 
 It should show that the publish completed successfully
 ![image](https://github.com/user-attachments/assets/2d522cd6-4631-4ab7-b028-4fe449daf707)
