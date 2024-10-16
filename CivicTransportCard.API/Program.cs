@@ -21,14 +21,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddAutoMapper(cfg => cfg.AddMaps(typeof(MappingProfile).Assembly));
 ////////////DI
 //Service
-builder.Services.AddScoped<IFareService, FareService>();
 builder.Services.AddScoped<ITransportCardService, TransportCardService>();
 
 //Repositories
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped<IFareRepository, FareRepository>();
 builder.Services.AddScoped<ITransportCardRepository, TransportCardRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 
 var app = builder.Build();
 

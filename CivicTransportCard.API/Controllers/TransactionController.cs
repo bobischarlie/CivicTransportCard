@@ -6,9 +6,8 @@ namespace CivicTransportCard.API.Controllers
     [ApiController]
     public class TransactionController : ControllerBase
     {
-
-        [HttpGet]
-        public async Task<IActionResult> CreateTransaction()
+        [HttpPost("/Trip")]
+        public async Task<IActionResult> UpsertTripTransaction()
         {
             return Ok();
         }

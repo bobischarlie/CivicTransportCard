@@ -9,7 +9,6 @@ namespace CivicTransportCard.Core.MapperProfile
     {
         public MappingProfile()
         {
-            CreateMap<Fare, FareEntity>().ReverseMap();
             CreateMap<Location, LocationEntity>().ReverseMap();
             CreateMap<TransactionEntity, Transaction>().ReverseMap();
             CreateMap<TransportCardEntity, TransportCardRequestContract>().ReverseMap();

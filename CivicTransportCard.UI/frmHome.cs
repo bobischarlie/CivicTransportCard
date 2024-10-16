@@ -16,7 +16,8 @@ namespace CivicTransportCard.UI
         private void openForm(Form formToOpen)
         {
             // Check if the form is already open
-            var openForm = Application.OpenForms.Cast<Form>().FirstOrDefault(f => f.GetType() == formToOpen.GetType());
+            var openForm = Application.OpenForms.Cast<Form>()
+                .FirstOrDefault(f => f.GetType() == formToOpen.GetType());
 
             if (openForm == null)
             {
@@ -25,6 +26,10 @@ namespace CivicTransportCard.UI
             }
             else
             {
+                if (openForm.WindowState == FormWindowState.Minimized)
+                {
+                    openForm.WindowState = FormWindowState.Normal;
+                }
                 openForm.BringToFront();
                 openForm.Focus();
             }

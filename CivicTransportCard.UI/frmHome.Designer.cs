@@ -32,6 +32,8 @@
             fileToolStripMenuItem = new ToolStripMenuItem();
             registerCardToolStripMenuItem = new ToolStripMenuItem();
             transactionToolStripMenuItem = new ToolStripMenuItem();
+            reloadCardToolStripMenuItem = new ToolStripMenuItem();
+            transportToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,9 +63,22 @@
             // 
             // transactionToolStripMenuItem
             // 
+            transactionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { reloadCardToolStripMenuItem, transportToolStripMenuItem });
             transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
             transactionToolStripMenuItem.Size = new Size(98, 24);
             transactionToolStripMenuItem.Text = "Transaction";
+            // 
+            // reloadCardToolStripMenuItem
+            // 
+            reloadCardToolStripMenuItem.Name = "reloadCardToolStripMenuItem";
+            reloadCardToolStripMenuItem.Size = new Size(224, 26);
+            reloadCardToolStripMenuItem.Text = "Reload Card";
+            // 
+            // transportToolStripMenuItem
+            // 
+            transportToolStripMenuItem.Name = "transportToolStripMenuItem";
+            transportToolStripMenuItem.Size = new Size(224, 26);
+            transportToolStripMenuItem.Text = "Transport";
             // 
             // frmHome
             // 
@@ -90,5 +105,7 @@
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem registerCardToolStripMenuItem;
         private ToolStripMenuItem transactionToolStripMenuItem;
+        private ToolStripMenuItem reloadCardToolStripMenuItem;
+        private ToolStripMenuItem transportToolStripMenuItem;
     }
 }
