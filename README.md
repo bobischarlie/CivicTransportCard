@@ -37,9 +37,8 @@ Database:
 
 
 It should show that the publish completed successfully
-![image](https://github.com/user-attachments/assets/2d522cd6-4631-4ab7-b028-4fe449daf707)
-you may also check that the tables have been created under moneyme_challenge database
-![image](https://github.com/user-attachments/assets/da2ad5f2-815c-4477-b3cb-135d80402f41)
+you may also check that the tables have been created under CivicTransportCard database
+![image](https://github.com/user-attachments/assets/2c16fad0-d088-40b0-940e-236092d90a76)
 
 
 Thing/s to check:
