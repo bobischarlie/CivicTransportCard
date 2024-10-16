@@ -1,16 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CivicTransportCard.API.Services.Interface;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CivicTransportCard.API.Controllers
 {
-    [Route("api/v1/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class TransactionController : ControllerBase
     {
-        [HttpPost("/Trip")]
-        public async Task<IActionResult> UpsertTripTransaction()
+        private readonly ITransactionService _transactionService;
+        public TransactionController(ITransactionService transactionService)
         {
-            return Ok();
+            _transactionService = transactionService;
         }
-
+        [HttpPost("/Trip")]
+        public async Task<IActionResult> UpsertTripTransaction(string cardNo, Guid locationId)
+        {
+            var returnValue = await _transactionService.UpsertTransaction(cardNo, locationId);
+            return Ok(returnValue);
+        }
     }
 }

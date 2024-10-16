@@ -16,5 +16,7 @@ namespace CivicTransportCard.Core.Entities
         [Column(TypeName = "decimal(7,2)")]
         public Decimal EndingBalance { get; set; }
         public TransactionType TransactionType { get; set; }
+
+        public virtual List<TransactionLocationEntity> TransactionLocation { get; set; }
     }
 }

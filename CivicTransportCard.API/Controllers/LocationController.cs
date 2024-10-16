@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CivicTransportCard.Core.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CivicTransportCard.API.Controllers
 {
@@ -6,5 +7,11 @@ namespace CivicTransportCard.API.Controllers
     [ApiController]
     public class LocationController : ControllerBase
     {
+        [HttpGet]
+        public async Task<IActionResult> GetLocationsAsync()
+        {
+            var locations = new List<Location>();
+            return Ok(locations);
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace CivicTransportCard.API.Services
                 TransportCardId = transportCardData.Id
             };
             await _transactionResitory.AddAsync(transactionEntity);
-
+            await _transactionResitory.SaveChangesAsync();
 
             var returnTransportData = _mapper.Map<TransportCard>(transportCardData);
             return returnTransportData;

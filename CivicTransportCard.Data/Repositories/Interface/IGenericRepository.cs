@@ -8,5 +8,6 @@ namespace CivicTransportCard.Data.Repositories.Interface
         Task<ICollection<T>> GetAllAsync();
         Task AddAsync(T entity);
         Task UpdateAsync(T entity);
+        Task SaveChangesAsync();
     }
 }

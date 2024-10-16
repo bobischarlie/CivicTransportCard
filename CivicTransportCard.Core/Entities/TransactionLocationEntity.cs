@@ -7,7 +7,7 @@ namespace CivicTransportCard.Core.Entities
     {
         public Guid TransactionId { get; set; }
         public Guid EntryPointLocationId { get; set; }
-        public Guid ExitPointLocationId { get; set; }
+        public Guid? ExitPointLocationId { get; set; }
 
         public TransactionEntity Transaction { get; set; }
         public LocationEntity EntryPointLocation { get; set; }

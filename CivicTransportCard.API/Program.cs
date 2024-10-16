@@ -22,12 +22,14 @@ builder.Services.AddAutoMapper(cfg => cfg.AddMaps(typeof(MappingProfile).Assembl
 ////////////DI
 //Service
 builder.Services.AddScoped<ITransportCardService, TransportCardService>();
+builder.Services.AddScoped<ITransactionService, TransactionService>();
 
 //Repositories
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ITransportCardRepository, TransportCardRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<ITransactionLocationRepository, TransactionLocationRepository>();
 
 var app = builder.Build();
 
