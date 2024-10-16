@@ -29,7 +29,8 @@ Database:
 - Open the downloaded Solution then right click on the CivicTransportCard.DB Project then click Publish
 
 - Click the Edit button then Go to Browse Tab and fill up the login credential for the local user that you just created, please refer to screenshot below
-  ![image](https://github.com/user-attachments/assets/0d305159-4400-4ef9-9367-019b3d4965b7)
+![image](https://github.com/user-attachments/assets/711c251b-eca0-4cc8-a5c0-cfca9dda1a24)
+
 
 -Then click Publish button
 ![image](https://github.com/user-attachments/assets/0991aec9-ebc7-432e-9d14-0624dd54c10f)
