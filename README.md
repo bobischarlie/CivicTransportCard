@@ -56,3 +56,6 @@ To set it to run simultaneously, please see screenshots below
 Check the App.config file in CivicTransportCard.WinForms Project, the baseAPIURL value should be the same URL if you run the WebAPI Project
 ![image](https://github.com/user-attachments/assets/fce7056c-b067-4b21-91c5-2c4be02d99b5)
 
+Run the script inside the CivicTransportCard.DB Project > Scripts > CTC Locations.sql
+![image](https://github.com/user-attachments/assets/3b55e444-54d1-4ae9-96ff-2a0039040891)
+
