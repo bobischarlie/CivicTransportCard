@@ -1,3 +1,5 @@
+using CivicTransportCard.WinForms;
+
 namespace CivicTransportCard.UI
 {
     public partial class frmHome : Form
@@ -35,5 +37,16 @@ namespace CivicTransportCard.UI
             }
         }
 
+        private void reloadCardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmReloadCard = new frmReloadCard();
+            openForm(frmReloadCard);
+        }
+
+        private void transportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmTransact = new frmTransaction();
+            openForm(frmTransact);
+        }
     }
 }

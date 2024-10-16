@@ -23,6 +23,7 @@ builder.Services.AddAutoMapper(cfg => cfg.AddMaps(typeof(MappingProfile).Assembl
 //Service
 builder.Services.AddScoped<ITransportCardService, TransportCardService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<ILocationService, LocationService>();
 
 //Repositories
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

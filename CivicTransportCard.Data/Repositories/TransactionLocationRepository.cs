@@ -24,5 +24,19 @@ namespace CivicTransportCard.Data.Repositories
             }
             return transactionLocation;
         }
+
+        public async Task<List<TransactionLocationEntity>> GetTransactionsByCardId(string cardNo)
+        {
+            var transactionLocations = await _context.TransactionLocation
+                                    .Where(t => t.Transaction.TransportCard.CardNo == cardNo
+                                    && t.Transaction.DateCreated.Date == DateTime.Now.Date)
+                                    .ToListAsync();
+            if (transactionLocations == null)
+            {
+                return null;
+            }
+
+            return transactionLocations;
+        }
     }
 }

@@ -18,5 +18,6 @@ namespace CivicTransportCard.Core.Entities
         public TransactionType TransactionType { get; set; }
 
         public virtual List<TransactionLocationEntity> TransactionLocation { get; set; }
+        public virtual TransportCardEntity TransportCard { get; set; }
     }
 }

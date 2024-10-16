@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CivicTransportCard.WinForms
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CivicTransportCard.API", "CivicTransportCard.API\CivicTransportCard.API.csproj", "{FD3EA618-9493-4A45-9384-09BB981A2152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivicTransportCard.Core", "CivicTransportCard.Core\CivicTransportCard.Core.csproj", "{79718FC9-FFCE-4E42-9B69-793E40B97BFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CivicTransportCard.Core", "CivicTransportCard.Core\CivicTransportCard.Core.csproj", "{79718FC9-FFCE-4E42-9B69-793E40B97BFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivicTransportCard.Data", "CivicTransportCard.Data\CivicTransportCard.Data.csproj", "{8BB80B8E-9987-4199-994A-DCC11F2DC7E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CivicTransportCard.Data", "CivicTransportCard.Data\CivicTransportCard.Data.csproj", "{8BB80B8E-9987-4199-994A-DCC11F2DC7E7}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CivicTransportCard.DB", "CivicTransportCard.DB\CivicTransportCard.DB.sqlproj", "{1F5879DD-2118-4323-8649-C19C86850EDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{8BB80B8E-9987-4199-994A-DCC11F2DC7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BB80B8E-9987-4199-994A-DCC11F2DC7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BB80B8E-9987-4199-994A-DCC11F2DC7E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F5879DD-2118-4323-8649-C19C86850EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F5879DD-2118-4323-8649-C19C86850EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F5879DD-2118-4323-8649-C19C86850EDF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1F5879DD-2118-4323-8649-C19C86850EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F5879DD-2118-4323-8649-C19C86850EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F5879DD-2118-4323-8649-C19C86850EDF}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

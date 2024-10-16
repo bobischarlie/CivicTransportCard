@@ -1,4 +1,5 @@
 ﻿using CivicTransportCard.API.Services.Interface;
+using CivicTransportCard.Core.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CivicTransportCard.API.Controllers
@@ -12,11 +13,27 @@ namespace CivicTransportCard.API.Controllers
         {
             _transactionService = transactionService;
         }
-        [HttpPost("/Trip")]
-        public async Task<IActionResult> UpsertTripTransaction(string cardNo, Guid locationId)
+
+        [HttpPost("Trip")]
+        public async Task<IActionResult> UpsertTripTransaction([FromBody]UpsertTripRequestContract upsertTripData)
         {
-            var returnValue = await _transactionService.UpsertTransaction(cardNo, locationId);
-            return Ok(returnValue);
+            try
+            {
+                var returnValue = await _transactionService.UpsertTransaction(upsertTripData);
+                if (returnValue == null)
+                {
+                    return NotFound("Transaction not found or could not be processed.");
+                }
+                return Ok(returnValue);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
         }
     }
 }

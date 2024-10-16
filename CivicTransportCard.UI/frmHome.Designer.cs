@@ -73,12 +73,14 @@
             reloadCardToolStripMenuItem.Name = "reloadCardToolStripMenuItem";
             reloadCardToolStripMenuItem.Size = new Size(224, 26);
             reloadCardToolStripMenuItem.Text = "Reload Card";
+            reloadCardToolStripMenuItem.Click += reloadCardToolStripMenuItem_Click;
             // 
             // transportToolStripMenuItem
             // 
             transportToolStripMenuItem.Name = "transportToolStripMenuItem";
             transportToolStripMenuItem.Size = new Size(224, 26);
             transportToolStripMenuItem.Text = "Transport";
+            transportToolStripMenuItem.Click += transportToolStripMenuItem_Click;
             // 
             // frmHome
             // 

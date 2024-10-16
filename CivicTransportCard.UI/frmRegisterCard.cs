@@ -1,10 +1,7 @@
 ﻿using CivicTransportCard.Core.Contracts;
+using CivicTransportCard.Core.Enum;
+using CivicTransportCard.WinForms;
 using CivicTransportCard.WinForms.Handler;
-using Newtonsoft.Json;
-using System.Configuration;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Windows.Forms;
 
 namespace CivicTransportCard.UI
 {
@@ -13,31 +10,52 @@ namespace CivicTransportCard.UI
         public frmRegisterCard()
         {
             InitializeComponent();
+            cboCardType.DataSource = Enum.GetValues(typeof(CardType));
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren())
+            try
             {
-                var transportCardData = new TransportCardRequestContract
+                picLoading.Visible = true;
+                btnCancel.Enabled = false;
+                btnSave.Enabled = false;
+                if (ValidateChildren())
                 {
-                    CardNo = txtCardNo.Text,
-                    FirstName = txtFirstName.Text,
-                    LastName = txtLastName.Text,
-                    IsSeniorOrPwd = chkSeniorPwd.Checked,
-                    IdNo = txtSeniorPwdIdNo.Text
-                };
-                var response = await ApiHandler.SendAPIPostRequestAsync("api/TransportCard", transportCardData);
-                MessageBox.Show($"Card with CardNo: {transportCardData.CardNo} Successfully Saved.");
-                foreach (var ctrl in this.Controls)
-                {
-                    if (ctrl is TextBox txtBox)
+                    var transportCardData = new TransportCardRequestContract
                     {
-                        txtBox.Clear();
+                        CardNo = txtCardNo.Text,
+                        FirstName = txtFirstName.Text,
+                        LastName = txtLastName.Text,
+                        IdNo = txtSeniorPwdIdNo.Text,
+                        CardType = (CardType)cboCardType.SelectedIndex
+                    };
+
+                    var response = await ApiHandler.SendAPIPostRequestAsync("api/TransportCard", transportCardData);
+                    MessageBox.Show($"Card with CardNo: {transportCardData.CardNo} Successfully Saved.");
+
+                    foreach (var ctrl in this.Controls)
+                    {
+                        if (ctrl is TextBox txtBox)
+                        {
+                            txtBox.Clear();
+                        }
                     }
                 }
             }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                picLoading.Visible = false;
+                btnCancel.Enabled = true;
+                btnSave.Enabled = true;
+            }
         }
+
+
         private void textBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -53,25 +71,43 @@ namespace CivicTransportCard.UI
             }
         }
 
-
-        private void chkSeniorPwd_CheckedChanged(object sender, EventArgs e)
-        {
-            lblSeniorPwdIdNo.Visible = chkSeniorPwd.Checked;
-            txtSeniorPwdIdNo.Visible = chkSeniorPwd.Checked;
-            if (chkSeniorPwd.Checked)
-            {
-                txtSeniorPwdIdNo.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
-            }
-            else
-            {
-                txtSeniorPwdIdNo.Validating -= new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
-            }
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.AutoValidate = AutoValidate.Disable;
             this.Close();
+        }
+
+        private void cboCardType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var showSeniorPwdFields = cboCardType.SelectedIndex == 1;
+            lblSeniorPwdIdNo.Visible = showSeniorPwdFields;
+            txtSeniorPwdIdNo.Visible = showSeniorPwdFields;
+        }
+
+        private void txtSeniorPwdIdNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is not a digit and not a control key (like Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Prevent the character from being entered
+            }
+        }
+
+        private void txtSeniorPwdIdNo_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            int length = textBox.Text.Length;
+
+            if (length != 10 && length != 12)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox, "This must be exactly 10 or 12 characters long.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBox, string.Empty);
+            }
         }
     }
 }

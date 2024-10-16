@@ -1,9 +1,10 @@
-﻿using CivicTransportCard.Core.Models;
+﻿using CivicTransportCard.Core.Contracts;
+using CivicTransportCard.Core.Models;
 
 namespace CivicTransportCard.API.Services.Interface
 {
     public interface ITransactionService
     {
-        Task<Transaction> UpsertTransaction(string cardNo, Guid locationId);
+        Task<Transaction> UpsertTransaction(UpsertTripRequestContract upsertTripData);
     }
 }
