@@ -4,8 +4,10 @@ Pre-requisites: Install applications below if not yet installed on your machine
 Visual Studio, 
 https://visualstudio.microsoft.com/downloads/
 
-SQL Server, SSMS 
+SQL Server, SSMS
+
 SQL SERVER: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
+
 SSMS: https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16
 
 .Net Core 8
