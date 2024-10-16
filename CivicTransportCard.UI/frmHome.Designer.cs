@@ -43,7 +43,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, transactionToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Size = new Size(1441, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -71,14 +71,14 @@
             // reloadCardToolStripMenuItem
             // 
             reloadCardToolStripMenuItem.Name = "reloadCardToolStripMenuItem";
-            reloadCardToolStripMenuItem.Size = new Size(224, 26);
+            reloadCardToolStripMenuItem.Size = new Size(174, 26);
             reloadCardToolStripMenuItem.Text = "Reload Card";
             reloadCardToolStripMenuItem.Click += reloadCardToolStripMenuItem_Click;
             // 
             // transportToolStripMenuItem
             // 
             transportToolStripMenuItem.Name = "transportToolStripMenuItem";
-            transportToolStripMenuItem.Size = new Size(224, 26);
+            transportToolStripMenuItem.Size = new Size(174, 26);
             transportToolStripMenuItem.Text = "Transport";
             transportToolStripMenuItem.Click += transportToolStripMenuItem_Click;
             // 
@@ -86,7 +86,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1441, 850);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             IsMdiContainer = true;
