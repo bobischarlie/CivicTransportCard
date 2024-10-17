@@ -1,6 +1,7 @@
 # CivicTransportCard
 
 Pre-requisites: Install applications below if not yet installed on your machine
+
 Visual Studio, 
 https://visualstudio.microsoft.com/downloads/
 
